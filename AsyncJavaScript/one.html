@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+</head>
+
+<body>
+    <h1>Code Aur JavaScript Two</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        document.querySelector('#start').addEventListener('click', function () {
+            const printName = (str) => {
+                console.log(str, "Mufiz");
+                console.log("Vora");
+            };
+            const namePrint = setInterval(printName, 1500, "hi");
+            document.querySelector('#stop').addEventListener('click', function () {
+                clearInterval(namePrint);
+            });
+        })
+    </script>
+    </bodyk>
+
+</html>

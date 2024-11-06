@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit And Delete Element - DOM</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <ul class="languages">
+            <li>JavaScript</li>
+        </ul>
+    </div>
+    <script>
+/*         const div = document.querySelector('.main-div')        
+        const ul = document.querySelector('languages')
+        console.log(ul);        
+        const li = document.createElement('li')
+        console.log(li);
+        const addText = document.createTextNode('Python')
+        console.log(addText);
+        
+        li.appendChild(addText)
+        div.appendChild(li)
+        document.body.appendChild(div) */
+
+        // Add Values Dynamically
+        const addLanguages = (language) => {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(language))
+            document.querySelector('.languages').appendChild(li)
+        }
+        addLanguages('Java')
+        addLanguages('React')
+        addLanguages('TypeScript')
+
+
+        // Edit Values Dynamically
+        const editSecLanguage = document.querySelector('li:nth-child(2)')
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode('Angular'))
+        // editSecLanguage.replaceChildren(li)
+        editSecLanguage.replaceWith(li)
+
+        // Edit Values Dynamically
+        const editFirLanguage = document.querySelector('li:first-child')
+        const editedLi = li.outerHTML = '<li>Python</li>'
+        
+        // Delete Values Dynamically
+        const deleteThrLanguage = document.querySelector('li:nth-child(3)')
+        deleteThrLanguage.remove()        
+    </script>
+</body>
+</html>
